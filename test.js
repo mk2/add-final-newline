@@ -3,9 +3,9 @@
 "use strict";
 
 const assert = require("assert");
-const mod = require("./lib");
+const afn = require("./lib");
 
-assert(mod("ok") === "ok\n");
-assert(mod("日本語") === "日本語\n");
-assert(mod("string\n") === "string\n");
-assert(mod("string\n\n") === "string\n\n");
+assert(afn("ok") === "ok\n");
+assert(afn("日本語") === "日本語\n");
+assert(afn("string\n") === "string\n");
+assert(afn("string\n\n") === "string\n\n");

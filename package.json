@@ -1,7 +1,12 @@
 {
   "name": "add-final-newline",
   "version": "0.9.0",
-  "bin": "lib/cmd.js",
+  "bin": {
+    "afn": "lib/cmd.js"
+  },
+  "files": [
+    "./lib/*"
+  ],
   "main": "lib/index.js",
   "license": "MIT",
   "engines": {

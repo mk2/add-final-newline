@@ -7,7 +7,7 @@ const path = require("path");
 const _fs = require("fs");
 const fs = _fs.promises;
 
-const mod = require("..");
+const afn = require("..");
 
 assert(process.argv[2], "*** need to specify target file.");
 
@@ -25,7 +25,7 @@ async function main(filePath: string) {
   const contents = await fs.readFile(absolutePath).catch(() => "");
 
   try {
-    await fs.writeFile(absolutePath, mod(contents));
+    await fs.writeFile(absolutePath, afn(contents));
   } catch (err) {
     console.error(`*** failed to write file: ${absolutePath}\n` + err);
   }
