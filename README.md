@@ -4,7 +4,7 @@
 
 - A convenient library for adding newline to a file.
 - It can be used via command-line, and library.
-- It was inspired from https://github.com/sindresorhus/strip-final-newline.
+- It was inspired by https://github.com/sindresorhus/strip-final-newline.
 
 ## How to use
 
