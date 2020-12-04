@@ -1,6 +1,6 @@
 {
   "name": "add-final-newline",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "bin": {
     "afn": "lib/cmd.js"
   },
