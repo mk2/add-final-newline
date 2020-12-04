@@ -3,21 +3,26 @@
 "use strict";
 
 module.exports = (input: string): string => {
-  return ensureFinalNewlineFromString(input);
+  return ensureFinalNewline(input);
 };
 
-function ensureFinalNewlineFromString(input: string): string {
-  return ensureFinalNewline(Buffer.from(input)).toString();
-}
+function ensureFinalNewline(input: string): string {
+  const LF = "\n";
+  const CR = "\r";
 
-function ensureFinalNewline(input: Buffer): Buffer {
-  const LF = "\n".charCodeAt(0);
-  const CR = "\r".charCodeAt(0);
+  const crLastIndex = input.lastIndexOf(CR);
+  const lfLastIndex = input.lastIndexOf(LF);
 
-  const SEP = input.includes(CR) ? CR : LF;
+  // SEP might be CRLF / CR / LF(default)
+  const SEP =
+    crLastIndex !== -1 && lfLastIndex - crLastIndex === 1
+      ? CR + LF
+      : crLastIndex > lfLastIndex
+      ? CR
+      : LF;
 
-  if (input[input.length - 1] !== SEP) {
-    return Buffer.concat([input, Buffer.from([SEP])]);
+  if (!input.endsWith(SEP)) {
+    return input + SEP;
   } else {
     return input;
   }
