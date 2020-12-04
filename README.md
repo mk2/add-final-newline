@@ -1,3 +1,5 @@
+![CI](https://github.com/mk2/add-final-newline/workflows/CI/badge.svg)
+
 # add-final-newline
 
 - A convenient library for adding newline to a file.
