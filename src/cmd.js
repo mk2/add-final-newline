@@ -23,7 +23,9 @@ async function main(filePath: string) {
     console.error(`*** not found file: ${absolutePath}\n` + err);
   }
 
-  const contents = await fs.readFile(absolutePath).catch(() => "");
+  const contents = await fs
+    .readFile(absolutePath, { encoding: "utf-8" })
+    .catch(() => "");
 
   try {
     await fs.writeFile(absolutePath, afn(contents));
